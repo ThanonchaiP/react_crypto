@@ -1,0 +1,15 @@
+.icon {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+
+  i {
+    font-size: 1.5rem;
+  }
+}

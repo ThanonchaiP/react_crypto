@@ -12,13 +12,11 @@ const Home = () => {
       const result = await axios.get("https://api.bitkub.com/api/market/ticker");
 
       let newData: Cryto[] = [];
-      const dataArray = Object.entries(result.data);
+      const dataArray: [string, Cryto][] = Object.entries(result.data);
 
-      // eslint-disable-next-line
-      dataArray.map((value) => {
-        let data: any = value[1];
-        newData.push({ ...data, name: value[0].split("_").pop() });
-      });
+      for (const value of dataArray) {
+        newData.push({ ...value[1], name: value[0].split("_").pop() });
+      }
 
       setList(newData);
     };
